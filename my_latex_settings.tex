@@ -1,0 +1,80 @@
+\usepackage{amssymb,amsbsy,latexsym,amsmath,amscd,epsfig,amsthm,wasysym,bbm,mathtools}
+\usepackage{fullpage} % Fill the page like MS Word
+\usepackage[doublespacing]{setspace}
+% \usepackage[onehalfspacing]{setspace} % Double spacing
+\usepackage[sort&compress,comma,longnamesfirst]{natbib} % Bibtex
+% \usepackage{hyperref}
+\usepackage{tikz} % To draw timeline
+\usepackage{pdflscape} % To typeset a certain pages in landspcape ( use lscape package with latex )
+\usetikzlibrary{backgrounds}
+\usepackage{xcolor}
+% \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+% usenames allows you to use names of the default colors, the same 16 base colors as used in HTML. The dvipsnames allows you access to more colors, another 64, and svgnames allows access to about 150 colors. The initialization of "table" allows colors to be added to tables by placing the color command just before the table.
+
+% some color codes from xkcd color survey
+\definecolor{xkcdRoyalBlue}{HTML}{0504aa}
+\definecolor{xkcdOrangeRed}{HTML}{fd3c06}
+
+
+\usepackage{booktabs} % For publication quality tables
+\usepackage{threeparttable}
+\usepackage{dcolumn} % To align entries of a table to their decimal points
+\usepackage{array,tabularx}
+\usepackage{tabu}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor = {xkcdRoyalBlue},
+  citecolor = {xkcdOrangeRed},
+  urlcolor = {xkcdOrangeRed}
+}
+% linkcolor [red]
+% anchorcolor [black]
+% citecolor [green]
+% filecolor [cyan]
+% menucolor [red]
+% runcolor [cyan - same as file color]
+% urlcolor [magenta]
+% allcolors
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage{placeins} % prevent tables and figures to be placed beyond \FloatBarrier
+
+% Palatino fontface
+\usepackage{newpxtext}
+\usepackage{newpxmath}
+
+
+% \DeclareMathVersion{nxbold}
+% \SetSymbolFont{operators}{nxbold}{OT1}{cmr} {b}{n}
+% \SetSymbolFont{letters}  {nxbold}{OML}{cmm} {b}{it}
+% \SetSymbolFont{symbols}  {nxbold}{OMS}{cmsy}{b}{n}
+
+
+% \newtheorem{newdef}{Definition}%{plain}
+% \newtheorem{prop}{Proposition}
+% \newtheorem{assum}{Assumption}
+
+\newcommand{\cen}[2]{\multicolumn{#1}{c}{#2}} % simplify the multicolumn
+\newcolumntype{d}[1]{D{.}{.}{#1}} % for dcolumn
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\newcommand{\Xcol}[1]{\multicolumn{1}{X}{#1}}
+\newcommand{\Ycol}[1]{\multicolumn{1}{Y}{#1}}
+
+
+\sectionfont{\color{xkcdRoyalBlue}}
+\subsectionfont{\color{xkcdRoyalBlue}}
+\subsubsectionfont{\color{xkcdRoyalBlue}}
+\renewcommand\thefootnote{\color{xkcdOrangeRed}{\arabic{footnote}}}
+\newcommand{\redtnote}[1]{\color{xkcdOrangeRed}\tnote{#1}}
+
+% \titleformat{\subsection}[runin]
+%   {\normalfont\large\bfseries\color{xkcdRoyalBlue}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries\color{xkcdRoyalBlue}}{\thesubsubsection}{1em}{}
