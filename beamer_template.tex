@@ -1,0 +1,136 @@
+\documentclass[11pt]{beamer}
+\setbeamertemplate{note page}[plain]
+% \setbeameroption{hide notes}
+% \setbeameroption{show notes}
+
+% \setbeameroption{show only notes}
+
+%\usefonttheme{structuresmallcapsserif} % title font
+
+\usepackage{xcolor}
+% some color codes from xkcd color survey
+\definecolor{xkcdRoyalBlue}{HTML}{0504aa}
+\definecolor{xkcdOrangeRed}{HTML}{fd3c06}
+
+% \usepackage[scaled]{FiraSans}
+% \usepackage[scaled]{helvet}
+\usepackage{setspace}
+\setstretch{1.3}
+\usepackage{multirow}
+\usepackage{amssymb,bbm,graphicx}%,preview}
+\usepackage{tikz} % To draw timeline
+\usetikzlibrary{backgrounds}
+\usepackage{tabu,booktabs,threeparttable} % For publication quality tables
+\usepackage{dcolumn} % To align entries of a table to their decimal points
+
+% use Palatino fontface
+\usepackage{newpxtext}
+\usepackage{newpxmath}
+% \usepackage{fontspec,lmodern}
+% \usepackage{mathtools,unicode-math}
+% \usefonttheme{professionalfonts}
+
+\newcommand{\cen}[2]{\multicolumn{#1}{c}{#2}} % simplify the multicolumn
+\newcolumntype{d}[1]{D{.}{.}{#1}} % for dcolumn
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\newcommand{\Xcol}[1]{\multicolumn{1}{X}{#1}}
+\newcommand{\Ycol}[1]{\multicolumn{1}{Y}{#1}}
+
+
+\usefonttheme[onlymath]{serif}  % math font
+\renewcommand\mathfamilydefault{\rmdefault}
+% \setsansfont[BoldFont={Fira Sans Book}]{Fira Sans Light}
+
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{note page}{size=\footnotesize}
+
+\setbeamertemplate{navigation symbols}{} % hide navigation bar
+\setbeamertemplate{mini frames}{}
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[circle]
+\setbeamertemplate{note page}[plain]
+
+\useoutertheme{infolines}
+\setbeamertemplate{headline}{ % Modify the default headline not to have dots for subsections: they are ugly!
+  % \begin{beamercolorbox}{section in head/foot}
+  %   \vskip1pt\insertnavigation{\textwidth}\vskip1pt
+  % \end{beamercolorbox}%
+  % \centerline{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.1pt}}} % Uncomment this line to have a thin line below the headline
+}
+
+\makeatletter
+\setbeamertemplate{footline}{ % Modify the footline
+  \leavevmode%
+  \centerline{\noindent\makebox[\linewidth]{\rule{0.95\paperwidth}{0.1pt}}} % draw a thin line above the footline
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)} % Name and institution in parenthesis
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle % Short title of the slides
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    % \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em} % Uncommment this to have date between title and page numbers
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} % Current page / Total number of pages
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+
+\title[Short Title]{Full Title}
+\author[Last Name]{Full Name}
+\institute[Short Affiliation]{Affiliation}
+\date{Date}
+
+\begin{document}
+%\section{Section title}
+\begin{frame}[t]{Slide Title}  % remove [t] to place body text in the middle vertically
+\begin{itemize}\itemsep10pt
+  \item Itemized list
+  \begin{itemize}\itemsep5pt
+    \item Inner list
+  \end{itemize}
+\end{itemize}
+
+\note{
+  Some slide notes
+}
+\end{frame}
+
+
+\begin{frame}[t]{Slide with table}
+\label{tab:1}
+\centering
+\begin{threeparttable}
+  \begin{tabular}{*{5}{c}} \\ \toprule
+        & \cen{2}{First} & \cen{2}{Second} \\
+    n   &  x  &  y  &  x  &  y  \\ \midrule
+    N   &  1  &  2  &  3  &  4  \\ \bottomrule
+  \end{tabular}
+  \begin{tablenotes}
+    \item \scriptsize{Data source: }
+  \end{tablenotes}
+\end{threeparttable}
+% \\
+% \hfill \hyperlink{fig:1}{\beamergotobutton{Figure}}
+% \note{
+% }
+\end{frame}
+
+\begin{frame}[t]{Slide with figure}
+% \centerline{%
+%   \label{fig:1}
+%   \includegraphics[height=0.8\textheight]{figure}%
+%     }
+
+\end{frame}
+
+
+\end{document}
+
